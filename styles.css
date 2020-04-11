@@ -1,0 +1,54 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+/* Mobile Styles first! */
+body {
+  background-color: dimgrey;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.nav {
+  background-color: deepskyblue;
+  min-width: 260px;
+}
+.nav ul li {
+  list-style: none;
+}
+.nav ul li a {
+  text-decoration: none;
+}
+.nav-menu {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.wrapper {
+  width: 97%;
+  max-width: 1200px;
+  min-width: 260px;
+  margin: 0 auto;
+  background-color: bisque;
+}
+.break-options {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.button {
+  background-color: hotpink;
+}
+.title {
+  text-align: center;
+}
+.food-img {
+  display: inline-block;
+  margin: 0 auto;
+}
