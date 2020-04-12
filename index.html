@@ -4,24 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plain JS Pomodoro Clock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="main-wrapper">
   <nav class="nav">
-    <ul class="nav-menu">
-      <li class="logo"><a href="#">Home</a></li>
-      <li><a href="#">Food</a></li>
-      <li><a href="#">Settings</a></li>
-    </ul>
+    <div class="nav-container">
+      <h1 class="logo"><a href="#">Foodie Timer</a></h1>
+      <ul class="nav-menu">
+        <li>
+          <a href="#" class="food-emoji">
+            <img src="images/tomato-32.png" alt="Tomato">
+          </a>
+        </li>
+        <li><img src="images/icons8-settings-32.png" alt="Settings Icon"></li>
+      </ul>
+    </div>
   </nav>
   <main class="wrapper">
-    <section class="break-options">
-      <button class="button">Foodie Break</button>
-      <button class="button">Snack Break</button>
-      <button class="button">Meal Break</button>
+    <section class="session-options">
+      <div class="foodie-opt">
+        <button class="button">Foodie Break</button>
+        <p class="p">25:00</p>
+      </div>
+      <div class="snack-opt">
+        <button class="button">Snack Break</button>
+        <p class="p">5:00</p>
+      </div>
     </section>
     <h1 class="title">Welcome to my Pomodoro App!</h1>
     <img class="food-img" src="images/002-tomato.png" alt="Food Icon"/>
+    <h2 class="timer">25:00</h2>
+    <section class="timer-options">
+      <button class="button start-btn">Start</button>
+      <button class="button stop-btn">Stop</button>
+      <button class="button reset-btn">Reset</button>
+    </section>
   </main>
+</div>
 </body>
 </html>

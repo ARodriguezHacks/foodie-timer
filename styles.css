@@ -15,40 +15,80 @@ body {
   background-color: dimgrey;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.main-wrapper {
+  width: 97%;
+  min-width: 260px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .nav {
   background-color: deepskyblue;
-  min-width: 260px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.nav ul li {
+.nav-container {
+  display: flex;
+}
+.nav-container ul li {
   list-style: none;
 }
-.nav ul li a {
+.nav-container ul li a {
   text-decoration: none;
 }
 .nav-menu {
   padding: 0;
   display: flex;
   justify-content: space-evenly;
+  flex: 1 0 auto;
 }
-.wrapper {
-  width: 97%;
-  max-width: 1200px;
-  min-width: 260px;
-  margin: 0 auto;
-  background-color: bisque;
+.logo {
+  font-family: 'Passion One', cursive;
+  padding-left: 1em;
 }
-.break-options {
-  padding: 0;
-  display: flex;
-  justify-content: space-evenly;
-}
-.button {
-  background-color: hotpink;
+.logo a {
+  text-decoration: none;
+  color: #333;
 }
 .title {
   text-align: center;
 }
+.wrapper {
+  background-color: bisque;
+}
+/*All buttons will have 16px font*/
+.button {
+  font-size: 16px;
+}
+.session-options,
+.timer-options {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.foodie-opt,
+.snack-opt {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.timer-options .button {
+  padding: 20px;
+}
 .food-img {
-  display: inline-block;
+  display: flex;
   margin: 0 auto;
+}
+.timer {
+  text-align: center;
+  margin: 0;
+  font-size: 70px;
+}
+.start-btn {
+  background-color: lightgreen;
+}
+.stop-btn {
+  background-color: lightcoral;
+}
+.reset-btn {
+  background-color: gray;
 }
