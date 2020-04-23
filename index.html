@@ -11,20 +11,44 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="main-wrapper">
+    <div class="pomodoro">
       <nav class="nav">
         <div class="nav-container">
           <h1 class="logo"><a href="#">Foodie Timer</a></h1>
-          <ul class="nav-menu">
-            <li>
-              <a href="#" class="food-emoji">
-                <img src="images/tomato-32.png" alt="Tomato" />
-              </a>
-            </li>
-            <li>
+          <div class="nav-menu">
+            <div class="custom-dropdown-wrapper nav-item">
+              <div class="custom-dropdown">
+                <div class="custom-dropdown-trigger" id="trigger">
+                  <span class="current-food-title">Tomato</span>
+                  <img
+                    src="images/tomato-32.png"
+                    alt="Tomato"
+                    class="current-food-icon"
+                  />
+                  <div class="arrow">
+                    <img src="images/icons8-sort-down-30.png" alt="dropdown" />
+                  </div>
+                </div>
+                <div class="custom-options">
+                  <div class="custom-option">
+                    <span class="food-option selected" data-value="banana"
+                      >Banana</span
+                    >
+                    <img src="images/012-banana-1.png" alt="Banana" />
+                  </div>
+                  <div class="custom-option">
+                    <span class="food-option" data-value="hamburger"
+                      >Hamburger</span
+                    >
+                    <img src="images/008-burger.png" alt="Hamburger" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item">
               <img src="images/icons8-settings-32.png" alt="Settings Icon" />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </nav>
       <main class="wrapper">
@@ -48,5 +72,6 @@
         </section>
       </main>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
