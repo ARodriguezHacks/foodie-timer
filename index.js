@@ -74,6 +74,7 @@ function addFoodOptions() {
   foodOptions.forEach(function (node, index) {
     node.insertBefore(removedFoodOptions[index], foodOptionsIcons[index]);
   });
+  foodOptions = null;
 }
 
 function checkIfFoodOptionsRemoved() {
