@@ -97,7 +97,7 @@ body {
   position: relative;
   user-select: none;
   width: 90%;
-  max-width: 120px;
+  max-width: 100px;
 }
 .custom-dropdown {
   position: relative;
@@ -125,6 +125,11 @@ body {
   pointer-events: none;
   z-index: 2;
 }
+.custom-dropdown.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
 .custom-option {
   display: flex;
   justify-content: space-evenly;
@@ -135,35 +140,20 @@ body {
   cursor: pointer;
   transition: all 0.5s;
 }
-/*
-.arrow {
-  position: relative;
-  height: 15px;
-  width: 15px;
+.custom-option:hover {
+  cursor: pointer;
+  background-color: #b2b2b2;
 }
-.arrow::before,
-.arrow::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  width: 0.15rem;
-  height: 100%;
-  transition: all 0.5s;
+.custom-option.selected {
+  color: #fff;
+  background-color: #305c91;
 }
-.arrow::before {
-  left: -5px;
-  transform: rotate(45deg);
-  background-color: #394a6d;
-}
-.arrow::after {
-  left: 5px;
-  transform: rotate(-45deg);
-  background-color: #394a6d;
-}
-*/
 
 @media only screen and (min-width: 768px) {
   .current-food-title {
     visibility: visible;
+  }
+  .custom-dropdown-wrapper {
+    max-width: 150px;
   }
 }
