@@ -136,7 +136,7 @@ body {
 }
 .food-option {
   position: relative;
-  display: block;
+  display: none;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -148,6 +148,11 @@ body {
   color: #fff;
   background-color: #305c91;
 }
+@media only screen and (max-width: 767px) {
+  .current-food-title {
+    width: 0px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .current-food-title {
@@ -155,5 +160,8 @@ body {
   }
   .custom-dropdown-wrapper {
     max-width: 150px;
+  }
+  .food-option {
+    display: block;
   }
 }
