@@ -1,4 +1,4 @@
-//import testModule from "/timer.js";
+import { startBtn, stopBtn, resetBtn } from "/timer.js";
 import foodImgOptions from "/images.js";
 let imgList = document.querySelectorAll(".custom-option");
 let currentFoodTitle = document.querySelector(".current-food-title");
@@ -6,8 +6,6 @@ let currentFood;
 let foodImg = document.querySelector(".food-img");
 let foodOptions;
 let foodOptionsIcons = [];
-
-console.log(foodImgOptions, currentFoodTitle);
 
 document
   .querySelector(".custom-dropdown-wrapper")
