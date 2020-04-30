@@ -1,11 +1,13 @@
+//import testModule from "/timer.js";
+import foodImgOptions from "/images.js";
+let imgList = document.querySelectorAll(".custom-option");
 let currentFoodTitle = document.querySelector(".current-food-title");
-//console.log(currentFoodTitle);
-let trigger = currentFoodTitle.parentNode;
-let currentFoodIcon = document.querySelector(".current-food-icon");
+let currentFood;
+let foodImg = document.querySelector(".food-img");
 let foodOptions;
-let removedChild;
 let foodOptionsIcons = [];
-let removedFoodOptions = [];
+
+console.log(foodImgOptions, currentFoodTitle);
 
 document
   .querySelector(".custom-dropdown-wrapper")
@@ -13,8 +15,9 @@ document
     this.querySelector(".custom-dropdown").classList.toggle("open");
   });
 
-for (const option of document.querySelectorAll(".custom-option")) {
+for (const option of imgList) {
   option.addEventListener("click", function () {
+    console.log(this);
     if (!this.classList.contains("selected")) {
       this.parentNode
         .querySelector(".custom-option.selected")
@@ -23,11 +26,14 @@ for (const option of document.querySelectorAll(".custom-option")) {
       this.closest(".custom-dropdown").querySelector(
         ".custom-dropdown-trigger span"
       ).textContent = this.textContent;
-      console.log(this.textContent);
       this.closest(".custom-dropdown").querySelector(
         ".custom-dropdown-trigger img"
       ).src = this.children[1].src;
-      console.log(this.children[1]);
+      currentFood = this.children[0].textContent;
+      let foodImgId = foodImgOptions.findIndex((e) => {
+        return e.food == currentFood.toLowerCase();
+      });
+      foodImg.src = foodImgOptions[foodImgId].image;
     }
   });
 }
@@ -67,7 +73,6 @@ function checkIfChildIsPresent() {
 function removeFoodOptions() {
   foodOptions = document.querySelectorAll(".custom-option");
   foodOptions.forEach(function (option) {
-    let foodSpan = option.childNodes[1];
     let foodIcon = option.childNodes[3];
     //option.style.visibility = "hidden";
     //console.log(foodSpan, foodIcon, option.childNodes);
