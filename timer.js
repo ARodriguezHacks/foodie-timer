@@ -8,17 +8,20 @@ if (minutes.textContent.length < 2) {
   minutes.textContent = "0" + `${minutes.textContent}`;
 }
 
-console.log(minutes.textContent, seconds.textContent);
+//console.log(minutes.textContent, seconds.textContent);
+let initialMinutes = minutes.textContent;
+let initialSeconds = seconds.textContent;
 
 let currentMinutes;
 let currentSeconds;
 let secondsTimeoutId; //rename
 
 let timerHasStarted = false;
-let timerStopped = false;
+let timerHasStopped = false;
 
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
+resetBtn.addEventListener("click", resetTimer);
 
 function startTimer() {
   timerHasStarted = true;
@@ -66,11 +69,17 @@ function startSeconds() {
   }, 1000);
 }
 
-// function resetTimer() {}
+function resetTimer() {
+  startBtn.removeAttribute("disabled");
+  timerHasStarted = false;
+  clearInterval(secondsTimeoutId);
+  minutes.textContent = initialMinutes;
+  seconds.textContent = initialSeconds;
+}
 
 function stopTimer() {
   startBtn.removeAttribute("disabled");
-  timerStopped = true;
+  timerHasStopped = true;
   clearInterval(secondsTimeoutId);
 }
 
