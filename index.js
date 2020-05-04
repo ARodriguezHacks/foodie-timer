@@ -1,4 +1,10 @@
-import { startBtn, stopBtn, resetBtn } from "/timer.js";
+import { startBtn, stopBtn, resetBtn } from "./timer.js";
+import {
+  settingsTrigger,
+  settingsModal,
+  foodieBreak,
+  snackBreak,
+} from "./timer-settings.js";
 import foodImgOptions from "/images.js";
 let imgList = document.querySelectorAll(".custom-option");
 let currentFoodTitle = document.querySelector(".current-food-title");
@@ -15,7 +21,6 @@ document
 
 for (const option of imgList) {
   option.addEventListener("click", function () {
-    console.log(this);
     if (!this.classList.contains("selected")) {
       this.parentNode
         .querySelector(".custom-option.selected")

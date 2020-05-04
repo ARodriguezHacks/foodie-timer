@@ -73,6 +73,7 @@ body {
 .timer-options .button {
   padding: 20px;
 }
+
 .food-img {
   display: flex;
   margin: 0 auto;
@@ -148,6 +149,80 @@ body {
   color: #fff;
   background-color: #305c91;
 }
+
+/*Settings Button*/
+.setting-dropdown-wrapper {
+  position: relative;
+  user-select: none;
+  width: 90%;
+  max-width: 100px;
+}
+
+.settings-dropdown {
+  position: relative;
+}
+
+.settings-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.settings-modal {
+  position: absolute;
+  width: 275px;
+  display: block;
+  top: 20%;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #394a6d;
+  background: #fff;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.settings-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.settings-food-opt,
+.settings-snack-opt {
+  padding: 0.5rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.settings-food-opt {
+  border-bottom: 1px solid #394a6d;
+}
+
+.settings-food-opt-wrapper,
+.settings-snack-opt-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.settings-food-opt-minutes,
+.settings-food-opt-seconds {
+  border: 1px solid;
+}
+
+.settings-food-opt-minutes input,
+.settings-food-opt-seconds input,
+.settings-snack-opt-minutes input,
+.settings-snack-opt-seconds input {
+  width: 100%;
+}
+
 @media only screen and (max-width: 767px) {
   .current-food-title {
     width: 0px;

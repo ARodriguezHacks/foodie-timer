@@ -53,12 +53,77 @@
                 </div>
               </div>
             </div>
-            <div class="nav-item">
-              <img src="images/icons8-settings-32.png" alt="Settings Icon" />
+
+            <div class="settings-dropdown-wrapper nav-item">
+              <div class="settings-dropdown">
+                <div class="settings-trigger">
+                  <img
+                    src="images/icons8-settings-32.png"
+                    alt="Settings Icon"
+                  />
+                </div>
+              </div>
             </div>
+            <form class="settings-modal">
+              <div class="settings-food-opt">
+                <p>FoodieBreak</p>
+                <div class="settings-food-opt-wrapper">
+                  <div class="settings-food-opt-minutes">
+                    <label for="foodie-mins">Min</label>
+                    <input
+                      id="foodie-mins"
+                      type="number"
+                      value="25"
+                      name="foodie-mins"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                  <div class="settings-food-opt-seconds">
+                    <label for="foodie-secs">Sec</label>
+                    <input
+                      id="foodie-secs"
+                      type="number"
+                      value="00"
+                      name="foodie-secs"
+                      min="0"
+                      max="60"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="settings-snack-opt">
+                <p>SnackBreak</p>
+                <div class="settings-snack-opt-wrapper">
+                  <div class="settings-snack-opt-minutes">
+                    <label for="snack-mins">Min</label>
+                    <input
+                      id="snack-mins"
+                      type="number"
+                      value="05"
+                      name="snack-mins"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                  <div class="settings-snack-opt-seconds">
+                    <label for="snack-secs">Sec</label>
+                    <input
+                      id="snack-secs"
+                      type="number"
+                      value="00"
+                      name="snack-mins"
+                      min="0"
+                      max="60"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </nav>
+
       <main class="wrapper">
         <section class="session-options">
           <div class="foodie-opt">
