@@ -72,6 +72,7 @@
                     <label for="foodie-mins">Min</label>
                     <input
                       id="foodie-mins"
+                      class="settings-option"
                       type="number"
                       value="25"
                       name="foodie-mins"
@@ -83,8 +84,9 @@
                     <label for="foodie-secs">Sec</label>
                     <input
                       id="foodie-secs"
+                      class="settings-option"
                       type="number"
-                      value="00"
+                      value="0"
                       name="foodie-secs"
                       min="0"
                       max="60"
@@ -99,8 +101,9 @@
                     <label for="snack-mins">Min</label>
                     <input
                       id="snack-mins"
+                      class="settings-option"
                       type="number"
-                      value="05"
+                      value="5"
                       name="snack-mins"
                       min="0"
                       max="100"
@@ -110,9 +113,10 @@
                     <label for="snack-secs">Sec</label>
                     <input
                       id="snack-secs"
+                      class="settings-option"
                       type="number"
-                      value="00"
-                      name="snack-mins"
+                      value="0"
+                      name="snack-secs"
                       min="0"
                       max="60"
                     />
@@ -128,11 +132,21 @@
         <section class="session-options">
           <div class="foodie-opt">
             <button class="button">Foodie Break</button>
-            <p class="p">25:00</p>
+            <p class="p">
+              <span class="current foodie-mins">25</span>:<span
+                class="current foodie-secs"
+                >00</span
+              >
+            </p>
           </div>
           <div class="snack-opt">
             <button class="button">Snack Break</button>
-            <p class="p">5:00</p>
+            <p class="p">
+              <span class="current snack-mins">5</span>:<span
+                class="current snack-secs"
+                >00</span
+              >
+            </p>
           </div>
         </section>
         <h1 class="title">Welcome to my Pomodoro App!</h1>
