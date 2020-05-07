@@ -64,11 +64,17 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.foodie-opt,
-.snack-opt {
+.session-opt {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.session-opt.selected {
+  color: #fff;
+  background-color: #305c91;
+  border-radius: 50px;
 }
 .timer-options .button {
   padding: 20px;
@@ -221,6 +227,14 @@ body {
 .settings-snack-opt-minutes input,
 .settings-snack-opt-seconds input {
   width: 100%;
+}
+
+.break-title {
+  margin-top: 0px;
+}
+.break-content {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 767px) {

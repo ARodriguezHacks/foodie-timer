@@ -1,5 +1,11 @@
+const sessionOptions = document.querySelectorAll(".session-opt");
+let timerMinutes = document.querySelector(".timer span.minutes");
+console.log(timerMinutes);
+let timerSeconds = document.querySelector(".timer span.seconds");
+
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
+
 let startBtn = document.querySelector(".start-btn");
 let stopBtn = document.querySelector(".stop-btn");
 let resetBtn = document.querySelector(".reset-btn");
@@ -22,6 +28,28 @@ let timerHasStopped = false;
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
 resetBtn.addEventListener("click", resetTimer);
+
+for (const option of sessionOptions) {
+  option.addEventListener("click", function () {
+    //console.log(this);
+    if (!this.classList.contains("selected")) {
+      this.parentNode
+        .querySelector(".session-opt.selected")
+        .classList.remove("selected");
+      this.classList.add("selected");
+    }
+    timerMinutes.textContent = this.querySelector(
+      ".break-content"
+    ).querySelector(".current-mins").textContent;
+
+    initialMinutes = timerMinutes.textContent;
+
+    timerSeconds.textContent = this.querySelector(
+      ".break-content"
+    ).querySelector(".current-secs").textContent;
+    console.log(timerMinutes);
+  });
+}
 
 function startTimer() {
   timerHasStarted = true;
