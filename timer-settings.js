@@ -14,14 +14,24 @@ settingsTrigger.addEventListener("click", function () {
 
 for (const option of settingsOptions) {
   option.addEventListener("change", function (e) {
+    //console.log(e);
     const parent = option.parentNode;
     let currentItem = currentSettings.find((elem) => {
       return elem.classList.contains(e.target.name);
     });
+    //console.log(currentItem.getAttribute("onkeydown"));
     if (e.target.value.length < 2) {
       currentItem.textContent = "0" + `${e.target.value}`;
     } else {
       currentItem.textContent = e.target.value;
+    }
+  });
+
+  option.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      return;
+    } else {
+      e.preventDefault();
     }
   });
 }

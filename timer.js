@@ -1,6 +1,5 @@
 const sessionOptions = document.querySelectorAll(".session-opt");
 let timerMinutes = document.querySelector(".timer span.minutes");
-console.log(timerMinutes);
 let timerSeconds = document.querySelector(".timer span.seconds");
 
 let minutes = document.querySelector(".minutes");
@@ -47,7 +46,8 @@ for (const option of sessionOptions) {
     timerSeconds.textContent = this.querySelector(
       ".break-content"
     ).querySelector(".current-secs").textContent;
-    console.log(timerMinutes);
+
+    initialSeconds = timerSeconds.textContent;
   });
 }
 
