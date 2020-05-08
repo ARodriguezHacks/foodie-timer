@@ -5,6 +5,9 @@ let currentSettings = document.querySelectorAll(".current");
 
 currentSettings = Array.from(currentSettings);
 
+let minutes = document.querySelector(".minutes");
+let seconds = document.querySelector(".seconds");
+
 let foodieBreak = document.querySelector(".foodie-opt");
 let snackBreak = document.querySelector(".snack-opt");
 
@@ -14,16 +17,21 @@ settingsTrigger.addEventListener("click", function () {
 
 for (const option of settingsOptions) {
   option.addEventListener("change", function (e) {
-    //console.log(e);
-    const parent = option.parentNode;
     let currentItem = currentSettings.find((elem) => {
       return elem.classList.contains(e.target.name);
     });
-    //console.log(currentItem.getAttribute("onkeydown"));
     if (e.target.value.length < 2) {
       currentItem.textContent = "0" + `${e.target.value}`;
     } else {
       currentItem.textContent = e.target.value;
+    }
+
+    if (currentItem.parentNode.parentNode.classList.contains("selected")) {
+      if (e.target.id === "foodie-mins" || e.target.id === "snack-mins") {
+        minutes.textContent = currentItem.textContent;
+      } else {
+        seconds.textContent = currentItem.textContent;
+      }
     }
   });
 

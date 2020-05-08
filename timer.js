@@ -13,7 +13,6 @@ if (minutes.textContent.length < 2) {
   minutes.textContent = "0" + `${minutes.textContent}`;
 }
 
-//console.log(minutes.textContent, seconds.textContent);
 let initialMinutes = minutes.textContent;
 let initialSeconds = seconds.textContent;
 
@@ -30,7 +29,6 @@ resetBtn.addEventListener("click", resetTimer);
 
 for (const option of sessionOptions) {
   option.addEventListener("click", function () {
-    //console.log(this);
     if (!this.classList.contains("selected")) {
       this.parentNode
         .querySelector(".session-opt.selected")
@@ -48,6 +46,7 @@ for (const option of sessionOptions) {
     ).querySelector(".current-secs").textContent;
 
     initialSeconds = timerSeconds.textContent;
+    console.log(timerMinutes);
   });
 }
 
@@ -101,8 +100,12 @@ function resetTimer() {
   startBtn.removeAttribute("disabled");
   timerHasStarted = false;
   clearInterval(secondsTimeoutId);
-  minutes.textContent = initialMinutes;
-  seconds.textContent = initialSeconds;
+  minutes.textContent = document.querySelector(
+    ".session-opt.selected span.current-mins"
+  ).textContent;
+  seconds.textContent = document.querySelector(
+    ".session-opt.selected span.current-secs"
+  ).textContent;
 }
 
 function stopTimer() {
