@@ -12,9 +12,12 @@ html {
 }
 /* Mobile Styles first! */
 body {
-  background-color: dimgrey;
+  background-color: bisque;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+input {
+  width: 100%;
 }
 .pomodoro {
   width: 97%;
@@ -23,9 +26,9 @@ body {
   margin: 0 auto;
 }
 .nav {
-  background-color: deepskyblue;
   max-width: 900px;
   margin: 0 auto;
+  border-bottom: 2px solid #394a6d;
 }
 .nav-container {
   display: flex;
@@ -40,26 +43,33 @@ body {
 .logo {
   font-family: "Passion One", sans-serif;
   padding-left: 0.5em;
-}
-.logo a {
-  text-decoration: none;
   color: #333;
+  font-size: 30px;
 }
+
 .current-food-title {
   visibility: hidden;
 }
 .title {
   text-align: center;
 }
-.wrapper {
-  background-color: bisque;
-}
 /*All buttons will have 16px font*/
 .button {
   font-size: 16px;
+  border-radius: 25px;
+}
+.button:hover {
+  cursor: pointer;
+}
+.timer-buttons-container {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .session-options,
 .timer-options {
+  margin-top: 1rem;
   padding: 0;
   display: flex;
   justify-content: space-evenly;
@@ -70,11 +80,18 @@ body {
   text-align: center;
   margin-top: 1rem;
   padding: 1rem;
+  border-radius: 50px;
+  background-color: lightgray;
+  box-shadow: 0px 0px 5px;
+}
+.session-opt:hover {
+  cursor: pointer;
 }
 .session-opt.selected {
   color: #fff;
   background-color: #305c91;
   border-radius: 50px;
+  box-shadow: 0px 0px 10px #402020fa;
 }
 .timer-options .button {
   padding: 20px;
@@ -110,7 +127,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 2px solid #394a6d;
 }
 .custom-dropdown-trigger {
   position: relative;
@@ -185,8 +201,8 @@ body {
   left: 0;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid #394a6d;
-  background: #fff;
+  background: #65e0c5;
+  box-shadow: 0px 0px 0px 5px;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -217,24 +233,23 @@ body {
   justify-content: center;
 }
 
-.settings-food-opt-minutes,
-.settings-food-opt-seconds {
-  border: 1px solid;
-}
-
-.settings-food-opt-minutes input,
-.settings-food-opt-seconds input,
-.settings-snack-opt-minutes input,
-.settings-snack-opt-seconds input {
-  width: 100%;
-}
-
 .break-title {
   margin-top: 0px;
 }
 .break-content {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer h4 {
+  padding-right: 0.5rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px) {

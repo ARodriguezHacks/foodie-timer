@@ -8,9 +8,6 @@ currentSettings = Array.from(currentSettings);
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 
-let foodieBreak = document.querySelector(".foodie-opt");
-let snackBreak = document.querySelector(".snack-opt");
-
 settingsTrigger.addEventListener("click", function () {
   settingsModal.classList.toggle("open");
 });
@@ -55,4 +52,4 @@ window.addEventListener("click", function (e) {
   }
 });
 
-export { settingsTrigger, settingsModal, foodieBreak, snackBreak };
+export { settingsTrigger, settingsModal };

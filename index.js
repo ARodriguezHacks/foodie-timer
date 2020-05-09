@@ -1,15 +1,11 @@
-import { startBtn, stopBtn, resetBtn } from "./timer.js";
-import {
-  settingsTrigger,
-  settingsModal,
-  foodieBreak,
-  snackBreak,
-} from "./timer-settings.js";
+import "./timer.js";
+import { settingsTrigger, settingsModal } from "./timer-settings.js";
 import foodImgOptions from "/images.js";
 let imgList = document.querySelectorAll(".custom-option");
 let currentFoodTitle = document.querySelector(".current-food-title");
-let currentFood;
 let foodImg = document.querySelector(".food-img");
+
+let currentFood;
 let foodOptions;
 let foodOptionsIcons = [];
 
@@ -47,68 +43,60 @@ window.addEventListener("click", function (e) {
     select.classList.remove("open");
   }
 });
-//change to hideFoodTitle
-function removeFoodTitle() {
+
+function hideFoodTitle() {
   currentFoodTitle.style.visibility = "hidden";
   currentFoodTitle.style.width = "0px";
 }
-//change to showFoodTitle
-function addFoodTitle() {
-  //let reinsertedChild = removedChild;
+
+function showFoodTitle() {
   currentFoodTitle.style.visibility = "visible";
-  //trigger.insertBefore(reinsertedChild, currentFoodIcon);
-  console.log(currentFoodTitle);
-  //removedChild = null;
 }
-//change to checkIfChildIsHidden
-function checkIfChildIsRemoved() {
+
+function checkIfChildIsHidden() {
   if (currentFoodTitle.style.visibility == "visible") {
-    removeFoodTitle();
+    hideFoodTitle();
   }
 }
 
 function checkIfChildIsPresent() {
   if (!currentFoodTitle) {
-    addFoodTitle();
+    showFoodTitle();
   }
 }
-//change to HideFoodOptions
-function removeFoodOptions() {
+
+function hideFoodOptions() {
   foodOptions = document.querySelectorAll(".custom-option");
   foodOptions.forEach(function (option) {
     let foodIcon = option.childNodes[3];
-    //option.style.visibility = "hidden";
-    //console.log(foodSpan, foodIcon, option.childNodes);
-    //removedFoodOptions.push(option.removeChild(foodSpan));
     foodOptionsIcons.push(foodIcon);
   });
 }
-//change to showFoodOptions
-function addFoodOptions() {
+
+function showFoodOptions() {
   foodOptions = document.querySelectorAll(".custom-option");
   foodOptions.forEach(function (node) {
     node.style.visibility = "visible";
-    //node.insertBefore(removedFoodOptions[index], foodOptionsIcons[index]);
   });
   foodOptions = null;
 }
-//change to checkIfFoodOptionsHidden
-function checkIfFoodOptionsRemoved() {
+
+function checkIfFoodOptionsHidden() {
   if (!foodOptions) {
-    removeFoodOptions();
+    hideFoodOptions();
   }
 }
 
 function checkIfFoodOptionsPresent() {
   if (foodOptions) {
-    addFoodOptions();
+    showFoodOptions();
   }
 }
-//change if statement
+
 function resizeWindow() {
   if (window.innerWidth < 768) {
-    checkIfChildIsRemoved();
-    checkIfFoodOptionsRemoved();
+    checkIfChildIsHidden();
+    checkIfFoodOptionsHidden();
   } else {
     checkIfChildIsPresent();
     checkIfFoodOptionsPresent();

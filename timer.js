@@ -18,7 +18,7 @@ let initialSeconds = seconds.textContent;
 
 let currentMinutes;
 let currentSeconds;
-let secondsTimeoutId; //rename
+let secondsTimeoutId;
 
 let timerHasStarted = false;
 let timerHasStopped = false;
@@ -46,7 +46,6 @@ for (const option of sessionOptions) {
     ).querySelector(".current-secs").textContent;
 
     initialSeconds = timerSeconds.textContent;
-    console.log(timerMinutes);
   });
 }
 
@@ -56,7 +55,6 @@ function startTimer() {
   startSeconds();
 }
 
-//rename
 function startMinutes() {
   currentMinutes = parseInt(minutes.textContent);
   currentMinutes -= 1;
@@ -67,7 +65,6 @@ function startMinutes() {
   }
 }
 
-//rename
 function startSeconds() {
   if (seconds.textContent === "00") {
     startMinutes();
